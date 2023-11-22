@@ -1,5 +1,6 @@
 // index.js
 const express = require('express')
+const json = require('./products.json')
 
 const app = express()
 const PORT = 4000
@@ -9,11 +10,7 @@ app.listen(PORT, () => {
 })
 
 app.get('/', (req, res) => {
-  res.send('Hey this is my API running 🥳')
-})
-
-app.get('/about', (req, res) => {
-  res.send('This is my about route..... ')
+  res.json(json)
 })
 
 // Export the Express API
